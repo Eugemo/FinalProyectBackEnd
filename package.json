@@ -2,15 +2,25 @@
   "name": "finalproyectbackend",
   "version": "0.0.0",
   "private": true,
+  "description": "API proyecto final curso MERNSTACK",
+  "main": "app.js",
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "node.js",
+    "express",
+    "mongodb"
+  ],
+  "author": "Maria Eugenia Moreno-Eugemo",
+  "license": "ISC",
   "dependencies": {
     "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
     "debug": "~2.6.9",
     "dotenv": "^10.0.0",
     "express": "~4.16.1",
-    "hbs": "~4.0.4",
     "http-errors": "~1.6.3",
     "mongoose": "^5.13.5",
     "morgan": "~1.9.1"
