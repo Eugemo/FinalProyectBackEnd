@@ -5,7 +5,7 @@
   "description": "API proyecto final curso MERNSTACK",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -23,7 +23,8 @@
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "mongoose": "^5.13.5",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "nodemon": "^2.0.12"
