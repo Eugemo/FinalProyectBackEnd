@@ -1,4 +1,3 @@
-// const mongoose = require('mongoose');
 const points = require('../data_vaccination.json');
 const pointSchema = require('../models/vaccination.models')
 
@@ -13,8 +12,7 @@ async function getPointById(req, res){
 async function postPoint(req, res) {
 
   let point = new pointSchema(
-    {   
-    //   _id: mongoose.Types.ObjectId,
+    {
       name: req.body.name,
       address: req.body.address,
       latitude: req.body.latitude,
@@ -31,6 +29,58 @@ async function postPoint(req, res) {
   res.status(200).json({message: 'Add Point Succesfully', createdPoint: point})
   
 }
+async function getPlaces (req, res) {    
+    let docs = await pointSchema.find()
+    .catch(err => console.log(err));
+    res.status(200).json(docs);    
+}
 
+async function getPlacesById (req, res) {    
+    let docs = await pointSchema.findById(req.params.id)
+    .catch(err => console.log(err));
+    res.status(200).json(docs);    
+}
 
-module.exports = { getPoint, getPointById ,postPoint };
+async function getPlacesById (req, res) {    
+    let docs = await pointSchema.findById(req.params.id)
+    .catch(err => console.log(err));
+    res.status(200).json(docs);    
+}
+
+async function deletePlaces (req, res) {   
+    const id = req.params.id     
+    let docs = await pointSchema.deleteOne({_id:id})    
+    .catch(err => console.log(err));
+    res.status(200).json(docs);    
+}
+
+async function postPlaces(req, res) {
+
+    let point = new pointSchema(
+      {
+        name: req.body.name,
+        address: req.body.address,
+        latitude: req.body.latitude,
+        longitude: req.body.longitude,
+        url: req.body.url,
+      }
+    )
+  
+    point.save()
+    .then(result => {
+        console.log(result);
+    })
+    .catch (err => console.log(err));
+    res.status(200).json({message: 'Add Point Succesfully', createdPoint: point})
+    
+  }
+  async function patchPlaces (req, res) {    
+    const id= req.body.id
+    delete req.body.id
+    let docs = await pointSchema.findByIdAndUpdate(id, req.body)
+    
+    .catch(err => console.log(err));
+    res.status(200).json(docs);       
+}
+
+module.exports = { getPoint, getPointById ,postPoint, getPlaces, getPlacesById, deletePlaces, postPlaces, patchPlaces };
