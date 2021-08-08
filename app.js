@@ -3,6 +3,7 @@ const cors = require("cors");
 const dotenv = require('dotenv').config();
 const dbConfig = require("./app/config/dbconfig");
 const mongoose = require("mongoose");
+const morgan = require("morgan");
 
 const app = express();
 
@@ -11,6 +12,7 @@ let corsOptions = {
 };
 
 app.use(cors(corsOptions));
+app.use(morgan('dev'));
 
 // parse requests of content-type - application/json
 app.use(express.json());

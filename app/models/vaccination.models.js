@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const PointSchema = mongoose.model(
     'Point',
-    new mongoose.Schema({       
+    new mongoose.Schema({ 
         name: String,
         address: String,
         latitude: String,
