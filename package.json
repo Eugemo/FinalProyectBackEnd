@@ -4,8 +4,8 @@
   "private": true,
   "description": "API proyecto final curso MERNSTACK",
   "main": "app.js",
-  "scripts": {
-    "start": "nodemon app.js",
+  "scripts": {   
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
