@@ -20,9 +20,12 @@ Maria Eugenia Moreno (eugemo)
 
 # Versiones
 * 0.1
-  
+
+# Deploy  
+https://api-vaccination-centers.herokuapp.com/
+
 *Initial Release
 
 #Comentarios
 
-Proyecto terminado sin desplegar
+Proyecto terminado
