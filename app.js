@@ -39,6 +39,6 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to pilarTecno application." });
+  res.json({ message: "Welcome to pilarTecno API Vaccination Centers" });
 });
 require('./app/routes/vaccination.routes')(app);
