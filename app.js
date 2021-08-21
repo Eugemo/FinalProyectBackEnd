@@ -11,7 +11,7 @@ let corsOptions = {
   origin: "http://localhost:8081"
 };
 
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(morgan('dev'));
 
 // parse requests of content-type - application/json
